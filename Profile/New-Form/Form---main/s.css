@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+@font-face {
+    font-family: 'handwriting';
+    src: url('norse-bold-webfont.woff2') format('woff2'),
+         url('norse-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+:root{
+    --input-color: rgba(128, 128, 128, 0.050);
+    --focus-color: rgb(0, 225, 207);
+    --valid-input: rgb(3, 194, 3);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.signUpPage{
+    display: flex;
+}
+
+.sandImage{
+    background: url(./images/shifaaz-shamoon-okVXy9tG3KY-unsplash.jpg);
+    width: 40vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+
+
+}
+.odin{
+    font-family: 'handwriting';
+    font-size: 90px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.511);
+    position: relative;
+    top: 35%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    
+    
+    
+}
+.logo{
+    height: 80%;
+}
+
+.rightSide{
+   width: 60vw;
+   background-color: rgb(241, 255, 255);
+  
+}
+
+
+.dummyText{
+    font-size: 20px;
+    padding: 15px;
+    font-family:"Roboto",'Courier New', Courier, monospace;
+    position: relative;
+    top: 10%;
+    
+    
+    
+}
+.formSign{
+    font-family:"Roboto",'Courier New', Courier, monospace;
+    position: relative;
+    top: 10%;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.366);
+    text-align: center;
+    font-size: 25px;
+}
+.actualForm{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    font-size: 15px;
+
+}
+input{
+    appearance: none;
+    border: 0.1px solid black;
+    border-radius: 5px;
+    width: 15vw;
+    height: 3vh;
+    margin: 10px;
+    background-color: var(--input-color);
+}
+input:valid{
+    outline: none;
+    border: 1px solid var(--valid-input) ;
+}
+
+input:invalid:focus{
+    outline: none;
+    border: 1px solid red;
+}
+
+
+
+.subButton{
+    position: absolute;
+    height: 4vh;
+    width: 10vw;
+    top: 110%;
+    color: white;
+    background-color: black;
+    border: 1px solid;
+    border-radius: 5px;
+
+}
+.login{
+position: absolute;
+top: 125%;
+
+}
+button:hover{
+    background-color: var(--focus-color);
+    border: 1px solid var(--focus-color);
+}
+#Message{
+    position: absolute;
+    top: 90%;
+    padding: 2px;
+}

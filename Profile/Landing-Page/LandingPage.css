@@ -1,0 +1,245 @@
+:root{
+    font-size: 10px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    --main-color: #1f2937 ;
+    color: white;
+}
+
+body{
+    min-height: 100vh;
+}
+
+header{
+    background-color: var(--main-color);
+    text-align: center;
+    font-size: 2.5rem;
+}
+nav{
+    font-size: 2rem;
+    text-align: center;
+    background-color: var(--main-color);
+}
+nav >  a{
+    margin: 1.5rem;
+}
+
+h2{
+    font-size:2rem ;
+    
+
+}
+
+a{
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+.body1{
+    padding-top: 8em;
+    background-color:var(--main-color);
+    color: white;
+    padding-left: 5rem;
+    display: flex;
+}
+
+#frstbtn{
+    height: 50px;
+    width: 250px;
+    font: bold;
+    font-size: 25px;
+    border: 1px white solid;
+    color:white ;
+    background-color: var(--main-color);
+    transition: 0.3s ease-in-out;
+    
+}
+#frstbtn:hover{
+    color: var(--main-color);
+    background-color: white;
+}
+.dummy1{
+    width: 50%;
+    padding-bottom: 1rem; 
+}
+
+.dummy1 button{
+    margin-top: 2rem;
+    height: 2rem;
+    width: 12rem;
+    font-size: 2rem;
+    background-color: var(--main-color);
+    color:white;
+    border-radius: .5rem;
+    border: none;
+}
+.imgToshiba{
+    display: flex;
+    height: 75vh;
+    width: 50vw;
+    justify-content: flex-start;
+    
+}
+.hdr{
+    padding-top: 1.5rem; 
+    font-size: 5rem;
+    text-align: center;
+    color: var(--main-color);
+    font-weight: bolder;
+    margin-bottom: 100px;
+}
+
+.imgs{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+    margin-bottom: 20rem;
+    gap: 2rem ;
+    
+    
+}
+
+.imgs img{
+    
+    width: 20rem;
+    height: 20rem;
+    transition: 0.3s ease-in-out;
+    border: .1rem solid var(--main-color);
+    border-radius: 1rem;
+    padding: .5rem;
+}
+.imgs img:hover{
+    transform: scale(1.2) ;
+    background-color:  var(--main-color);
+}
+
+
+.white{
+    margin-top: 150px;
+    height: 150px;
+    padding: 200px;
+    padding-top: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bolder;
+    color: var(--main-color);
+    
+}
+.blue{
+    background-color:var(--main-color) ;
+    border-radius: 5px;
+    height: 100px;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    padding-top: 5px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 25px;
+}
+.blue button{
+    height: 50px;
+    width: 120px;
+    font-size: 20px;
+    color:white;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: var(--main-color);
+    transform:translatey(35%);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+
+}
+button:hover{
+    color: #1f2937;
+    background-color: white;
+    transform: translateY(25px);
+
+}
+.fter{
+    background-color: var(--main-color);
+    color: white;
+    text-align: center;
+    height: 100px;
+    padding-top: 20px;
+    font-size: 20px;
+    padding-bottom: 150px;
+    margin-top: 100px;
+}
+
+.buysell{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 35px;
+    width: 50%;
+    align-content: center;
+}
+.buy span,.sell span{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    font-style: italic;
+}
+.buy,.sell{
+    font-size: 20px;
+    font-weight: bold;
+    border: var(--main-color) 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+.sell{
+    color: var(--main-color);
+    margin-left: 150px; 
+}
+.buy{
+    color: white;
+    background-color: var(--main-color);
+    margin-right: 150px;
+}
+.about{
+    display: grid;
+    grid-template-rows: 300px 300px;
+    grid-template-areas: 
+    "sidebar content"
+    "sidebar content";
+    padding: 10px;
+    font-size: 20px;
+    word-spacing: 2px;
+    width: 100%;
+    margin: auto;
+    background-color: var(--main-color);
+    color: white;
+
+}
+.aboot{
+    margin-top: 100px;
+    font-size: 50px;
+    text-align: center;
+    color: var(--main-color);
+    font-weight: bolder;
+}
+.logo2{
+    display: flex;
+    
+}
+.logo3{
+    margin: auto;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid white;
+    letter-spacing: 5px;
+}

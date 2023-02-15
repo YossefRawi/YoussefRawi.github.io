@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="name">Virtual Library</div>
+            <button  data-modal-target="#modal" class="form-selector">+</button>
+        </div>
+        <div class="books"></div>
+        <div class=" modal popup-form" id="modal">
+            <form action="">
+
+                <h2 class="modal-header ">Add Book <button data-close-button class="close-button">&times;</button> </h2>
+                <label for="Title">Title</label>
+                <input type="text" name="Title" id="Title" placeholder="Title" required minlength="5" pattern="[A-Za-z0-9]+" >
+                <label for="Author">Author</label>
+                <input type="text" name="Author" id="Author" required placeholder="Author" minlength="5" pattern="[A-Za-z0-9]+">
+                <label for="Pages">Pages</label>
+                <input type="number" name="Pages" id="Pages" placeholder="Pages" required minlength="5" pattern="[0-9]">
+                <label for="readit">Have you read it? (Yes/No)</label>
+                <input type="text" id="readit" required pattern="[Yy]es|[Nn]o">
+                <p id="demo"></p>
+                <button id="submit" type="button" onclick="getBookInfo()" >Submit</button>
+
+                
+            </form>
+            
+        </div>
+        
+    </div>
+    <div id="overlay"></div>
+    
+</body>
+</html>

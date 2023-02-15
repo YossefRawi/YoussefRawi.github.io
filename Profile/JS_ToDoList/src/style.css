@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    --main-color: #323441;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button{
+    color: var(--main-color);
+    background-color: white;
+    border-radius: .5rem;
+    border: none;
+    transition: 0.2s ease-in-out;
+    font-size: 1.5rem;
+}
+button:hover{
+    color: white;
+    border: 0.001rem solid white;
+    background-color: var(--main-color);
+    }
+
+.mainHeader,.listItem{
+    color: white;
+    background: var(--main-color);
+}
+
+
+.mainHeader{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 2.5rem;
+    place-items: center;
+}
+.addproject,.addlist{
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    
+}
+
+    
+.list{
+    display: grid;
+    gap: 1rem;
+    margin: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(1fr,1fr));
+}
+.listItem{
+    padding: 1rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows:1fr 1fr ;
+
+}
+.listItem>.Btns{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+.dates{
+    padding-top: 1rem;
+}
+.descs{
+    font-size: 1rem;
+}
+
+.project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.form{
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    width: 40vw;
+    height: 40vh;
+    display: grid;
+    grid-template-rows: .5fr .5fr 3fr .5fr;
+    padding: 1rem;
+    border-radius: .5rem;
+    gap: 15px;
+    margin: auto;
+    color: white;
+    
+}
+.form>*{
+    border-radius: .5rem;
+    outline: none;
+    border: 1px solid var(--main-color);
+    padding: 1rem;
+    resize: none;
+}
