@@ -10,13 +10,15 @@
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 600;
-    color: var(--main-color);
+    color: white;
+}
+
+body{
+    background-image: url(images/kai-pilger-Ef6iL87-vOA-unsplash.jpg);
+    
 }
 
 .bckImg{
-    background-color: var(--main-color);
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100vh;
     display: flex;
 
@@ -24,8 +26,8 @@
 .main{
     text-align: center;
     font-size: 3rem;
-    background-color: white;
-    border: 1.5rem solid white;
+
+    border: .2rem solid white;
     padding: 1rem;
     border-radius: 1rem ;
     display: grid;
@@ -57,13 +59,10 @@
 }
 button{
     color: white;
-    background-color: var(--main-color);
+    background-color: cadetblue;
     border: .1rem solid white;
     border-radius: 1rem ;
 }
-button:hover{
-    color: var(--main-color);
-    background-color: white;
-    border: .1rem solid var(--main-color) ;
-
+input{
+    color: black;
 }

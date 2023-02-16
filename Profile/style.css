@@ -17,49 +17,33 @@
 
 }
 body{
+    background-image: url(images/castlecopy1.jpg);
     
-    background-color: #0f172a;
 }
 header{
     position: relative;
-    
+    height: 100vh;
 }
 
 h1{
     font-size: 7rem;
 }
 
-
-
-
-header>img{
-    width: 100%;
-    height: 90%;
-    object-fit: contain;
-    overflow: hidden;
-    filter: blur(1rem);
-    -webkit-filter: blur(0.5rem);
-}
-.centered,.centered-paragraph {
+.centered {
+    border-left: 0.3rem solid var(--sidebar-main-color);
+    padding:1rem ;
     color: var(--sidebar-main-color);
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.centered-paragraph{
-    border-left: 0.3rem solid var(--sidebar-main-color);
-    padding: 0.5rem;
-    top: 60%;
-    left: 60%;
-    font-size: 2rem;
-    color: var(--sidebar-main-color);
-}
+
 .bottom-left {
     color: var(--sidebar-main-color);
     position: absolute;
     top: 90%;
-    left: 5%;
+    margin-left: 0.5rem;
     font-size: 4rem;
 }
 
@@ -68,21 +52,23 @@ header>img{
     font-size: 5rem;
     color: var(--sidebar-main-color);
     
-  }
-  
-  .gitLink{
+}
+
+.gitLink{
     padding: 1rem;
     padding-top: 1.5rem;  
-    border: 0.1rem solid var(--sidebar-main-color);  
+    border: 0.2rem solid var(--sidebar-main-color); 
+
   }
 
 
   main{
-    
-    height: 120vh;
+    background-color: var(--sidebar-main-color);
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(40rem,1fr)) ;
     gap: 0.5rem;
+    padding: 0.5rem;
     margin: auto;
     font-size: 3rem;
     color: var(--sidebar-main-color);
@@ -102,13 +88,11 @@ header>img{
     background-position: center;
     background-size: cover;
     box-shadow: inset 0 0 0 0 var(--sidebar-main-color);
-    border: .1rem solid var(--main-background);
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
     color: var(--sidebar-main-color);
 }
 .card:hover {
     box-shadow: inset 80rem 0 0 0 var(--sidebar-main-color);
     color: var(--main-background);
-    border: .1rem solid var(--main-background);
     
 }
