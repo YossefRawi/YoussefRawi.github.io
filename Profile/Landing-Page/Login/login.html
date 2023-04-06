@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <script src="../Scripts/auth.js" defer></script>
+    <script src="login.js" defer></script>
+    <title>Laptopia-login</title>
+</head>
+<body>
+    <div class="formSign">
+        <header><h1>Laptopia - Log In </h1></header>
+        <form class="actualForm" action="">
+            <p id="Message"></p>
+                
+                <label for="e-mail">E-mail</label>
+                <input type="email" id="e-mail" name="E-mail" required
+                placeholder="E-mail">              
+                
+                <label for="passWord">Password</label>        
+                <input type="password" id="passWord" name="passWord" required
+                placeholder="Password">  
+            <div>
+                <p id="Message"></p>
+                <button class="subButton" id="subtn" type="button">Submit</button>
+            
+            <div class="login">Don't have an account? <a href="../Register/Register.html">Sign Up!</a>
+                <br>
+                
+            </div>
+        
+            
+        </form>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+</body>
+</html>

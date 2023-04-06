@@ -59,7 +59,7 @@ body{
 }
 button{
     color: white;
-    background-color: cadetblue;
+    background-color: rgba(95, 158, 160, 0);
     border: .1rem solid white;
     border-radius: 1rem ;
 }
