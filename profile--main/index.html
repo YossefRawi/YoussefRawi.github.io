@@ -7,7 +7,6 @@
     <title>Yossef Rawi</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
         
@@ -38,6 +37,21 @@
         </ul>
     </nav>
 
-
+<script>const menu_toggle = document.querySelector('.toggle')
+    const showcase_toggle = document.querySelector('.showcase')
+    const explore_work = document.getElementById('explore-work')
+    const text_toggle = document.getElementById('text')
+    
+    
+            menu_toggle.addEventListener('click', () => {
+                menu_toggle.classList.toggle('active')
+                showcase_toggle.classList.toggle('active')
+                text_toggle.classList.toggle('active')
+            })
+            
+            
+    
+    
+    </script>
 </body>
 </html>
