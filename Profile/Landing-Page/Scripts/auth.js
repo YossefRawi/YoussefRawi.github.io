@@ -1,5 +1,6 @@
 const logout = document.getElementById('log-out');
 const account_id = document.getElementById('account-id')
+const frstBtn = document.getElementById('frstbtn')
 
 
 
@@ -70,3 +71,4 @@ auth.onAuthStateChanged(user => {
 
 
 
+  frstBtn.addEventListener('click', () => {window.location.replace('../Browse/browse.html')})

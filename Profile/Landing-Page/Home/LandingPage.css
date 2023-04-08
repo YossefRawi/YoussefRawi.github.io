@@ -1,75 +1,3 @@
-:root{
-    font-size: 10px;
-}
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    box-sizing: border-box;
-    --main-color: #282A35 ;
-    color: white;
-}
-
-
-button{
-    height: 5rem;
-    width: 15rem;
-    font: bold;
-    font-size: 2.5rem;
-    border: 0.1rem  solid;
-    color:white ;
-    background-color: var(--main-color);
-    box-shadow: inset 0 0 0 0 white;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-
-}
-button:hover{
-    box-shadow: inset 300px 0 0 0 white;
-    color: var(--main-color);
-}
-
-
-header{
-    background-color: var(--main-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    font-size: 2rem;
-    
-}
-
-nav >  a{
-    margin: 0.5rem;
-}
-
-a {
-    text-decoration: none;
-    box-shadow: inset 0 0 0 0 white;
-    margin: 0 -.25rem;
-    padding: 0.5rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-  }
-  a:hover {
-    box-shadow: inset 200px 0 0 0 white;
-    color: var(--main-color);
-  }
-
-
-
-
-
-@media(max-width:700px){
-    header{
-        display: grid;
-        text-align: center;
-        justify-content: center;
-    }
-    
-    
-
-}
 
 
 main{
@@ -77,8 +5,13 @@ main{
     background-color: var(--main-color);
 }
 
+.about-section{
+    background-color: white;
+    color: var(--main-color);
+}
+
 .banner-text{
-    font-size: 2.5rem;
+    font-size: 2rem;
     min-height: 100vh;
     padding: 8rem 0 5rem 5rem;
     background-color:var(--main-color);
@@ -97,8 +30,8 @@ main{
 
 #frstbtn{
     margin-top: 2rem;
-    height: 5rem;
-    width: 25rem;
+    height: 4rem;
+    width: 15rem;
 }
 
 
@@ -126,10 +59,3 @@ main{
     }
 }
 
-.log-out{
-    font-size: 1.5rem;
-    height: 3rem;
-    width: 10rem;
-    cursor: pointer;
-    
-}

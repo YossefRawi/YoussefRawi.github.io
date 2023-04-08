@@ -10,7 +10,7 @@ message.style.color = 'red'
 function login () {
     
     if(!Email.value.length) return message.textContent = 'Please enter an E-mail'
-    if(!passWord.value.length) return message.textContent = 'Please enter an Password'
+    if(!passWord.value.length) return message.textContent = 'Please enter a Password'
 
 
 
