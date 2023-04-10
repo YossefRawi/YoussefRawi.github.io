@@ -1,6 +1,5 @@
-const logout = document.getElementById('log-out');
+
 const account_id = document.getElementById('account-id')
-const frstBtn = document.getElementById('frstbtn')
 
 
 
@@ -27,17 +26,12 @@ const laptopia_db = firebase.database().ref('laptopia')
  const laptopia_firestore_db = firebase.firestore()
 
 
- logout.addEventListener('click', (e) => {
-  e.preventDefault();
-  auth.signOut();
-  location.replace('../login/login.html')
-});
- 
+
 
  const userLoggedIn = (first_name, user) =>{
   console.log(first_name)
   console.log('user logged in: ', user);
-  account_id.href = '../Account/account.html'
+  account_id.href = '../HTML/account.html'
   account_id.style.backgroundColor= 'white';
   account_id.style.color='var(--main-color)'
   account_id.textContent = first_name
@@ -45,7 +39,7 @@ const laptopia_db = firebase.database().ref('laptopia')
 
 const userLoggedOut = () => {
   console.log('user logged out');
-  account_id.href = '../Login/login.html'
+  account_id.href = '../HTML/login.html'
   logout.style.display = 'none';
 }
 
@@ -65,10 +59,3 @@ auth.onAuthStateChanged(user => {
   
 
 
-
-
-
-
-
-
-  frstBtn.addEventListener('click', () => {window.location.replace('../Browse/browse.html')})

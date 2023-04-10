@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Global/global.css">
-    <link rel="stylesheet" href="browse.css">
- 
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/browse.css">
+    <script src="../JS/logout.js" defer></script>
+
     <title>Laptopia - Browse</title>
 </head>
 <body>
@@ -19,8 +20,13 @@
             <button class="log-out" id="log-out">Log Out</button>
         </nav>
     </header>
+    <h1 class="page-header">Shop</h1>
+    <main class="shop-main">
+        <div class="shop-filter"></div>
+        <div class="shop-items"></div>
+    </main>
  
-    <script src="../Scripts/auth.js" defer ></script>
+    <script src="../JS/auth.js" defer ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 </body>
 </html>

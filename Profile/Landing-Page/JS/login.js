@@ -31,7 +31,7 @@ function login () {
       message.style.color = 'green'
       message.textContent = 'Logged In!'
 
-      window.location.replace('../Home/index.html')
+      window.location.replace('../HTML/index.html')
   
     })
     .catch(function(error) {

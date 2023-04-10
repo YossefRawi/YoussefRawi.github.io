@@ -75,7 +75,7 @@ const send_db = (firstname,lastname,e_mail,phonenum,password,confirmpassword) =>
 })
 .then(() =>{
   printSignedUp()
-  window.location.replace('../login/login.html')
+  window.location.replace('../HTML/login.html')
 })
 .catch(function(error) {
   // Firebase will use this to alert of its errors
