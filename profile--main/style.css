@@ -134,6 +134,7 @@
     max-width: 700px;
 }
 .text a{
+    cursor: pointer;
     display: inline-block;
     font-size: 1em;
     background: white;
@@ -143,13 +144,15 @@
     margin-top: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: inset 0 0 0 0 var(--main-color);
+    box-shadow: inset 0 0 0 0 transparent;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 
 }
 .text a:hover{
-    box-shadow: inset 400px 0 0 0 var(--main-color);
+    border: 1px solid white;
+    box-shadow: inset 400px 0 0 0 transparent;
     color: white;
+    background-color: transparent;
 }
 
 
@@ -263,6 +266,8 @@
 }
 
 .go-back{
+    color: var(--main-color);
+    background-color: white;
     width: 50%;
     height: 50%;
 

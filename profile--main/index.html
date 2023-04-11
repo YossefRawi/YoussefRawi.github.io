@@ -18,11 +18,11 @@
         <video src="./assets/pexels-pressmaster-3129671-3840x2160-30fps.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
         <div id="text" class="text">
-            <h2>Hello,</h2>
-            <h3>My name is  </h3>
-            <br> <span>Yossef Rawi</span>
+            <h3>Hello,</h3>
+            <h3>My name is  </h3><br> 
+            <span>Yossef Rawi</span>
             <p>I want to become a Web Developer, I like making websites and learning new technologies.</p>
-            <a href="work.html" id="explore-work">Explore Work!</a>
+            <a  id="explore-work">Explore Work!</a>
         </div>
         
 
@@ -43,21 +43,68 @@
             <li></li>
         </ul>
     </nav>
-<script>
+
+
+    <div class="overlay"></div>
+    <main id="main">
+    </main>
+    <video id="work-video" src="assets/pexels-pressmaster-3129671-3840x2160-30fps.mp4" autoplay loop muted></video>
+
+<script type="module" src="data.js"></script>
+<script type="module">
+    
     const menu_toggle = document.querySelector('.toggle')
     const showcase_toggle = document.querySelector('.showcase')
-    const showcase_id = document.getElementById('showcase')
     const text_toggle = document.getElementById('text')
-    
-    
-            menu_toggle.addEventListener('click', () => {
-                menu_toggle.classList.toggle('active')
-                showcase_toggle.classList.toggle('active')
-                text_toggle.classList.toggle('active')
-            })
+    const get_menu = document.getElementById('menu')
+    const explore_work = document.getElementById('explore-work')
+    const main = document.getElementById('main')
+
+
+    import Data from './data.js'
+
+
+
+    menu_toggle.addEventListener('click', () => {
+        menu_toggle.classList.toggle('active')
+        showcase_toggle.classList.toggle('active')
+        text_toggle.classList.toggle('active')
+        })
             
 
+    explore_work.addEventListener('click', () => {
+            document.body.removeChild(showcase_toggle)
+            document.body.removeChild(get_menu)
+    })
     
+
+const Card = Data.map(card => {
+    let createCard = document.createElement('a')
+    let createCardDesc = document.createElement('h2')
+    createCard.classList.add(card.class,"card")
+    createCardDesc.textContent = card.name
+    createCard.appendChild(createCardDesc)
+    createCard.href = card.link
+    createCard.target = "_blank"
+    main.appendChild(createCard)
+
+    
+})
+
+const go_back = document.querySelector('.go-back')
+go_back.target = ''
+go_back.addEventListener('click', () =>{
+    document.body.appendChild(showcase_toggle)
+    document.body.appendChild(get_menu)
+} )
+
+
+
+
+
+
+
+
     
     </script>
 </body>

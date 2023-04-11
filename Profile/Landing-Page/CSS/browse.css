@@ -1,6 +1,148 @@
-.page-header{
+.search-wrapper{
+    margin: 1rem auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+#search-bar{
+    outline: none;
+    width: 80%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--blue-color);
+    padding: 15px 5px;
+}
+
+#seach-bar:focus{
+    border-bottom: 5px solid var(--blue-color);
+}
+
+#search-bar-button{
+    height: 3rem;
+}
+
+
+.shop-items{
+    margin: 5rem    auto;
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+
+a, i{
+    text-decoration: none;
+}
+
+.content h3{
     text-align: center;
-    margin-top: 1rem;
-    font-size: 48px;
+    font-size: 30px;
+    margin: 0;
+    padding-top: 10px;
+
+}
+.gallery{
+    display: flex;
+    flex-wrap:wrap ;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+.content{
+    display: grid;
+    width: 20%;
+    margin: 15px;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0 14px 28px rbga(0,0,0,0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: 0.4s;
+    background: #f2f2f2f2;
+}
+.content:hover{
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+}
+
+.content img{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.content p{
+
+    height: 80px;
+    text-align: center;
+    color: var(--blue-color);
+    padding-top:0 8px ;
+}
+
+.content h6{
+    font-size: 26px;
+    text-align: center;
     color: var(--main-color);
+    margin: 0;
+}
+
+.content ul{
+    list-style: none;
+
+}
+
+.content ul li{
+    padding-top: 5px;
+}
+
+.content button{
+
+    font-size: 24px;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: inset 0 0 0 0 white;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.content button:hover{
+    box-shadow: inset 1800px 0 0 0 white;
+    border-bottom: 2px solid var(--main-color);
+
+}
+
+
+.card-hide{
+    display: none;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .content{
+        width: 50%;
+    }
+    
+}
+
+@media (min-width: 450px) {
+    .content{
+        width: 100%;
+    }
+    
 }

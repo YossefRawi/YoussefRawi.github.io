@@ -1,7 +1,8 @@
 :root{
 
-    --main-color:#212529 ;
-    --footer-color:#212529;
+    --main-color:#212529;
+    --blue-color:#777696;
+    --card-color:#FEF5DF;
 }
 *,ul,li,ol{
     list-style: none;

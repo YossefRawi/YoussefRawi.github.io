@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="overlay"></div>
-    <main id="main">
-    </main>
-    <video id="work-video" src="assets/pexels-pressmaster-3129671-3840x2160-30fps.mp4" autoplay loop muted></video>
-
-
-
-
-
-
-    <script>
-        const main = document.getElementById('main')
-
 const Data =
 [{
     id:0,
     name: '<===',
     class: 'go-back',
-    link:'index.html',
+    link:'',
 },{  id:1,
     name:"Tic-Tac-Toe",
     image:"../public/assets/portoTTT.png",
@@ -93,25 +70,4 @@ const Data =
 }]
 
 
-
-const Card = Data.map(card => {
-    let createCard = document.createElement('a')
-    let createCardDesc = document.createElement('h2')
-    createCard.classList.add(card.class,"card")
-    createCardDesc.textContent = card.name
-    createCard.appendChild(createCardDesc)
-    createCard.href = card.link
-    createCard.target = "_blank"
-    main.appendChild(createCard)
-
-    
-})
-
-const go_back = document.querySelector('.go-back')
-
-go_back.target = ''
-
-
-    </script>
-</body>
-</html>
+export default Data
