@@ -1,6 +1,6 @@
 
 const account_id = document.getElementById('account-id')
-
+const profile_email = document.getElementById('profile-email')
 
 
 
@@ -20,7 +20,7 @@ firebase.initializeApp(firebaseConfig);
 
 const laptopia_db = firebase.database().ref('laptopia')
 
-// Initialize variables
+// Initialize consts
  const auth = firebase.auth()
  const database = firebase.database()
  const laptopia_firestore_db = firebase.firestore()
@@ -28,13 +28,14 @@ const laptopia_db = firebase.database().ref('laptopia')
 
 
 
- const userLoggedIn = (first_name, user) =>{
-  console.log(first_name)
+ const userLoggedIn = (email, user) =>{
+  console.log(email)
   console.log('user logged in: ', user);
   account_id.href = '../HTML/account.html'
   account_id.style.backgroundColor= 'white';
   account_id.style.color='var(--main-color)'
-  account_id.textContent = first_name
+  account_id.textContent = email
+  profile_email.textContent = email
 }
 
 const userLoggedOut = () => {
@@ -49,11 +50,9 @@ const userLoggedOut = () => {
 auth.onAuthStateChanged(user => {
   
     if (!user) return userLoggedOut()
-
-    console.log(user.uid)
-
+    
     laptopia_firestore_db.collection('users').doc(user.uid).get().then(doc => {
-    userLoggedIn(doc.data().firstname,user)
+    userLoggedIn(doc.data().email,user)
     })
   })
   

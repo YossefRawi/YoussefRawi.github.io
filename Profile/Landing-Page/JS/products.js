@@ -6,12 +6,13 @@ let users = []
 
 
 search_bar.addEventListener('input', (e) => {
- const value = e.target.value.toLowerCase()
- users.forEach(user => {
-    const isVisible = user.name.toLowerCase().includes(value) ||user.brand.toLowerCase().includes(value)
-    user.element.classList.toggle('card-hide', !isVisible)
- });
+    const value = e.target.value.toLowerCase()
+    users.forEach(user => {
+        const isVisible = user.name.toLowerCase().includes(value) ||user.brand.toLowerCase().includes(value)
+        user.element.classList.toggle('card-hide', !isVisible)
+    });
 })
+
 
 
 
@@ -20,10 +21,9 @@ async function getProducts(){
     const response = await fetch('https://dummyjson.com/products', {mode: 'cors'})
     
     const productData = await response.json();
-    console.log(productData);
     
     users = productData.products.map(product => {
-        console.log(product)
+
         const content_div = document.createElement('div')
         content_div.classList.add('content')
         const content_img = document.createElement('img')
@@ -60,6 +60,3 @@ async function getProducts(){
     }}
 
     getProducts()
-
-//
-//

@@ -1,0 +1,46 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--blue-color)
+}
+
+.profile-button {
+    background:var(--blue-color);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    
+    border: 1px solid var(--blue-color);
+    color: var(--blue-color);
+}
+
+.profile-button:focus {
+    background: var(--main-color);
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: var(--main-color);
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+
+
+#nav-bar a{
+    text-decoration: none;
+    color: white;
+}
+
+#nav-bar a:hover{
+    color: var(--main-color);
+}

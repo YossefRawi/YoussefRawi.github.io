@@ -1,5 +1,5 @@
 const logout = document.getElementById('log-out');
-const frstBtn = document.getElementById('frstbtn')
+
 
 logout.addEventListener('click', (e) => {
     e.preventDefault();
@@ -14,4 +14,4 @@ logout.addEventListener('click', (e) => {
 
 
 
-  frstBtn.addEventListener('click', () => {window.location.replace('browse.html')})
+ 

@@ -1,7 +1,5 @@
-let firstName = document.getElementById('firstName');
-let lastName = document.getElementById('lastName');
+
 let Email = document.getElementById('e-mail');
-let phoneNum = document.getElementById('phoneNum');
 let message = document.getElementById('Message');
 let passWord = document.getElementById('passWord');
 let conPassword = document.getElementById('confirmP');
@@ -24,16 +22,8 @@ function printSignedUp(){
 
 function submitForm(e){
     //validation
-    if (!firstName.checkValidity()) return message.innerHTML = 'Please enter your first name!';
-
-    if (!lastName.checkValidity()) return message.innerHTML = 'Please enter your last name!';
-
     if (!Email.checkValidity()) return message.innerHTML = 'Please enter an e-mail in the correct format for example: abc@gmail.com';
-
-    if (!phoneNum.checkValidity()) return message.innerHTML = 'Please enter a valid phone number for example: 000-00-000';
-
     if (passWord.value.length === 0) return message.innerHTML = 'Please Enter a Password';
-    
     if(passWord.value !== conPassword.value) return message.textContent = "Passwords don't match"
         
     
@@ -42,35 +32,27 @@ function submitForm(e){
     
     
     e.preventDefault();
-    
-    let firstname = firstName.value
-    let lastname = lastName.value
+
     let e_mail = Email.value
-    let phonenum = phoneNum.value
     let password = passWord.value
-    let confirmpassword = conPassword.value
+
     
-    send_db(firstname,lastname,e_mail,phonenum,password,confirmpassword)
+    send_db(e_mail,password)
     
     
 }
 
 
 
-const send_db = (firstname,lastname,e_mail,phonenum,password,confirmpassword) => {
+const send_db = (e_mail,password) => {
   //email authetication
     auth.createUserWithEmailAndPassword(e_mail, password)
   .then((cred) => {
 
-    
+
     return laptopia_firestore_db.collection('users').doc(cred.user.uid).set({
       email : e_mail,
-      firstname : firstname,
-      lastname: lastname,
-      phonenum: phonenum,
       password: password,
-      confirmpassword: confirmpassword
-
     })
 })
 .then(() =>{
