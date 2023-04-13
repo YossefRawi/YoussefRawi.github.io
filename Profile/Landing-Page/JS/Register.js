@@ -26,20 +26,11 @@ function submitForm(e){
     if (passWord.value.length === 0) return message.innerHTML = 'Please Enter a Password';
     if(passWord.value !== conPassword.value) return message.textContent = "Passwords don't match"
         
-    
-
-
-    
-    
     e.preventDefault();
 
     let e_mail = Email.value
     let password = passWord.value
-
-    
     send_db(e_mail,password)
-    
-    
 }
 
 

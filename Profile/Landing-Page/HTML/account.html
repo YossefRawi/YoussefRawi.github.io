@@ -4,61 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="../CSS/account.css">
-    <script src="../JS/auth.js" defer></script>
-    <script src="../JS/logout.js" defer></script>
-    <script src="../JS/account.js" defer></script>
+    <link rel="stylesheet" href="../CSS/global.css">
     <title>Document</title>
 </head>
 <body>
     <header >
-        <h1>LAPOTPIA</h1>
+        <a href="index.html"><h1>LAPOTPIA</h1></a>
         <nav id="nav-bar">
-
-            <a href="" id="account-id" >Account</a>
+            <a href="browse.html">Browse</a>
             <a href="">Cart</a>
+            <a  class="profile-img-link" id="profile-img-link" href="">
+                <img alt="ss" id="profile-img" class="profile-img profile-img-header" src="../image/user_318-159711.avif"> 
+            </a>
             <button class="log-out" id="log-out">Log Out</button>
         </nav>
     </header>
-
+    
     <div class="container rounded bg-white mt-5 mb-5">
         <div class="row">
             <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img alt="ss" class="rounded-circle mt-5" width="150px" src="../image/robin-har-knight-b3 (1).jpg"><span class="text-black-50" id="profile-email">edogaru@mail.com.my</span><span> </span></div>
-            </div>
-            <div class="col-md-5 border-right">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
+                <div  class="d-flex flex-column align-items-center text-center p-3 py-5"><img alt="ss" id="account-img" class=" rounded-circle mt-5 profile-img " src="../image/user_318-159711.avif"> 
+                    <span><input type="file" placeholder="Upload Image" class="custom-file-input" onchange="chooseFile(event)"
+                        id="profile-img-upload"></span>
+                        <button id="img-upload" onclick='signUpButtonPressed()'>Upload</button>
                     </div>
-                    <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Name</label><input type="text" id="first-name" class="form-control" placeholder="first name" value=""></div>
-                        <div class="col-md-6"><label class="labels">Surname</label><input type="text" id="sur-name" class="form-control" value="" placeholder="surname"></div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" id="phone-num" class="form-control" placeholder="enter phone number" value=""></div>
-                        <div class="col-md-12"><label class="labels">Address</label><input type="text" id="first-address" class="form-control" placeholder="enter address" value=""></div>
-                        <div class="col-md-12"><label class="labels">Secondary Address</label><input type="text" id="second-address" class="form-control" placeholder="enter secondary address" value=""></div>
+                </div>
+                <div class="col-md-5 border-right">
+                    <div class="p-3 py-5">
+                        <div id="profile-message"></div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Profile Settings</h4>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label class="labels">Name</label><input type="text" id="first-name" class="form-control" required placeholder="first name" value=""></div>
+                            <div class="col-md-6"><label class="labels">Surname</label><input required type="text" id="sur-name" class="form-control" value="" placeholder="surname"></div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Mobile Number</label><input required type="text" id="phone-num" class="form-control" placeholder="enter phone number" value=""></div>
+                            <div class="col-md-12"><label class="labels">Address</label><input required type="text" id="first-address" class="form-control" placeholder="enter address" value=""></div>
+                            <div class="col-md-12"><label class="labels">Secondary Address</label><input required type="text" id="second-address" class="form-control" placeholder="enter secondary address" value=""></div>
+                            
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6"><label class="labels">Country</label><input required type="text" id="country" class="form-control" placeholder="country" value=""></div>
+                            <div class="col-md-6"><label class="labels">State/Region</label><input required type="text" id="state" class="form-control" value="" placeholder="state"></div>
+                        </div>
+                        <div class="mt-5 text-center"><button class="" id="profile-button" type="button">Save Profile</button></div>
                         
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Country</label><input type="text" id="country" class="form-control" placeholder="country" value=""></div>
-                        <div class="col-md-6"><label class="labels">State/Region</label><input type="text" id="state" class="form-control" value="" placeholder="state"></div>
-                    </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" id="profile-button" type="button">Save Profile</button></div>
+                </div>
+                <div class="personal-information col-md border-right">
+                    <h1>Personal Information</h1>
+                    <h6>Name:</h6>
+                    <h5 id="profile-data-name"></h5>
+                    <h6>Number:</h6>
+                    <h5 id="profile-data-num"></h5>
+                    <h6>Address:</h6>
+                    <h5 id="profile-data-add"></h5>
+                    <h6>Second Address:</h6>
+                    <h5 id="profile-data-sadd"></h5>
+                    <h6>Country:</h6>
+                    <h5 id="profile-data-cty"></h5>
+                    <h6>State/Region:</h6>
+                    <h5 id="profile-data-ste"></h5>
                 </div>
             </div>
-            
-            </div>
         </div>
-    </div>
-    </div>
+        
+        
+        
+        <script src="../JS/logout.js" defer></script>
+        <script src="../JS/account.js" defer></script>
+        <script src="../JS/auth.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 </body>
 </html>
