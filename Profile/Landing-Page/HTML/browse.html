@@ -5,17 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/global.css">
-    <link rel="stylesheet" href="../CSS/browse.css">
-    
-    <script src="../JS/logout.js" defer></script>
+    <link rel="stylesheet" href="../CSS/browse.css">    
     <title>Laptopia - Browse</title>
 </head>
 <body>
-    <header >
+    <header>
         <a href="index.html"><h1>LAPOTPIA</h1></a>
         <nav id="nav-bar">
             <a href="browse.html">Browse</a>
-            <a href="">Cart</a>
+            <!-- <a href="cart.html">Cart</a> -->
             <a  class="profile-img-link" id="profile-img-link" href="account.html">
                 <img alt="ss" id="profile-img" class="profile-img profile-img-header" src="../image/user_318-159711.avif"> 
             </a>
@@ -23,20 +21,28 @@
         </nav>
     </header>
 
+    <nav class="cart-shop-toggle">
+        <div id="toggle-shop">Shop</div>
+        <div id="toggle-cart">Cart</div>
+    </nav>
 
-
-    <main class="shop-main">
+    <main class="shop-main" id="shop-main">
         <div class="search-wrapper">
             <input type="search" name="search-bar" id="search-bar" placeholder="Search...">
-            <button id="search-bar-button">Search</button>
         </div>
 
     <div class="shop-items" id="shop-items">
     </div>
+    </main>
 
+    <section class="cart-main toggle" id="cart-main">
+    <main class="main-cart-body " id="main-cart-body">
+
+        
 
     </main>
-    <script src="../JS/products.js"></script>
+    </section>
+    <script src="../JS/products.js" defer></script>
     <script src="../JS/auth.js" defer ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 </body>

@@ -113,6 +113,10 @@
     color: var(--main-color);
   }
 
+  .personal-information h6{
+    color: white;
+  }
+
   .personal-information h1{
     text-align: center;
     margin: 10px;
