@@ -159,6 +159,7 @@
 
 
 .menu{
+    background-color: white;
     position: absolute;
     top: 0;
     right: 0;
@@ -169,6 +170,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 
 }
 
@@ -204,11 +206,6 @@
     .text h3{
         font-size: 2em;
     }
-    .text.active{
-
-        left: 0;
-        right: 0;
-    }
     
 }
 
@@ -239,7 +236,7 @@
     color: white;
     align-items: center;
     justify-items: center;
-    z-index: 1;
+    z-index: 0;
 }
 
 #main a{
