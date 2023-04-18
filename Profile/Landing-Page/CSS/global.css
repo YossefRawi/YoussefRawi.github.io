@@ -1,5 +1,8 @@
 :root{
-
+    --f-message:rgba(195, 0, 0, 0.602);
+    --f-border:1px solid rgb(133, 0, 0);
+    --s-message:rgba(0, 195, 0, 0.602);
+    --s-border:1px solid rgb(0, 133, 0);
     --main-color:#212529;
     --blue-color:#777696;
     --card-color:#FEF5DF;
@@ -122,3 +125,5 @@ a {
   .profile-img-header:hover{
     border-radius: 0;
   }
+
+  

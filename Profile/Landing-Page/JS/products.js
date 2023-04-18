@@ -2,6 +2,8 @@
 const main_cart_body = document.getElementById("main-cart-body")
 const shop_items = document.getElementById('shop-items')
 const search_bar = document.getElementById("search-bar")
+const checkout_amount = document.getElementById("checkout-amount")
+const added_to_cart = document.getElementById('added-to-cart')
 
 
 
@@ -36,8 +38,8 @@ search_bar.addEventListener('input', (e) => {
 
 
 
-//PLACE CART ITEMS IN AN ARRAY
 let cart = []
+
 
 
 
@@ -53,7 +55,7 @@ async function getProducts(){
         users = productData.products.map(product => {
             
 
-            const {title,description,brand,price,rating,stock,images, id} = product
+            const {title,description,brand,price,rating,stock,images,id} = product
             
             const content_div = document.createElement('div')
             content_div.classList.add('content')
@@ -83,80 +85,14 @@ async function getProducts(){
             
             
             
-            //WHEN CLICKED THE PRODUCT APPEARS IN THE 
+            //WHEN CLICKED THE PRODUCT APPEARS IN THE CART
             content_button.addEventListener('click', () => {
 
-
-            if (cart.filter(item => item.title === title).length > 0) return
-
-            cart.push(product)
-
-            console.log(cart)
+            setCartItems(title,description,brand,price,images, product)
             
-            const cart_item = document.createElement('div')
-            cart_item.classList.add('cart-item')
-            const item_img = document.createElement('img')
-            item_img.classList.add('cart-item-img')                
-            const item_info = document.createElement('div')
-            item_info.classList.add('item-info')
-            const item_brand = document.createElement('h3')
-            item_brand.classList.add('item-brand')
-            const item_name = document.createElement('h3')
-            item_name.classList.add('item-name')
-            const item_desc = document.createElement('h6')
-            item_desc.classList.add('item-desc')
             
-            item_info.append(item_brand,item_name,item_desc)
-            
-            const item_price = document.createElement('h3')
-            item_price.classList.add('item-price')
-            
-            const item_amount = document.createElement('input')
-            item_amount.setAttribute('id','item-amount')
-            item_amount.setAttribute('class','item-amount')
-            
-            item_amount.setAttribute('min','1')
-            item_amount.setAttribute('placeholder', '1')
-            
-            const item_remove = document.createElement('button')
-            item_remove.classList.add('item-remove')
-            item_remove.setAttribute('id',title)
-            item_remove.textContent = 'Remove'
-
-            item_remove.addEventListener('click', (event) => {
-                let buttonClicked = event.target
-                buttonClicked.parentElement.remove()
-                cart.pop(product)
-                console.log(cart)
             })
-            
-            item_img.srcset =  images[0], images[1], images[2], images[3], images[4], images[5]
-            
-
-            cart_item.append(item_img,item_info,item_price,item_amount,item_remove)
-            
-            
-            
-            item_brand.textContent = brand
-            item_name.textContent = title
-            item_desc.textContent = description
-            item_price.textContent = price
-            
-            
-            main_cart_body.append(cart_item)
-
-            },)
-            
-            
-            
-
-
-
-        
-
-
             return { name: product.title, brand:product.brand,element: content_div}
-            
     
         })
 
@@ -167,13 +103,156 @@ async function getProducts(){
     }}
     
     getProducts()
-        
     
     
-    
-    // function removeCartItem(event , product) {
-    //     let buttonClicked = event.target
-    //     buttonClicked.parentElement.remove()
-    // }
-    
+    function setCartItems(title,description,brand,price,images,product){
+
+            //RETURNS IF CART ARRAY ALREADY CONTAINS ELEMENT
+
+            if (cart.filter(item => item.title === title).length > 0){
+                itemAlreadyAdded()
+                return
+            } 
+            cart.push(product)
+
+            const cart_item = document.createElement('div')
+            cart_item.classList.add('cart-item')
+            const item_img = document.createElement('img')
+            item_img.classList.add('cart-item-img')                
+            const item_info = document.createElement('div')
+            item_info.classList.add('item-info')
+            const item_brand = document.createElement('h3')
+            item_brand.classList.add('item-brand')
+            const item_name = document.createElement('h3')
+            item_name.classList.add('item-name')
+            const item_desc = document.createElement('h5')
+            item_desc.classList.add('item-desc')
+            
+            item_info.append(item_brand,item_name,item_desc)
+            
+            const item_price = document.createElement('h3')
+            item_price.classList.add('item-price')
+            
+            const item_amount = document.createElement('input')
+            item_amount.setAttribute('type','number')
+            item_amount.setAttribute('id','item-amount')
+            item_amount.setAttribute('class','item-amount')
+            item_amount.setAttribute('min','1')
+            item_amount.setAttribute('value','1')
+
+            product.amount = Number(item_amount.value)
+            item_amount.addEventListener('input',() =>{
+                if(!item_amount.value) return
+                product.amount = Number(item_amount.value)
+                console.log(cart)
+                getTotalCartAmount()
+            })
+
+
+            //BUTTON THAT REMOVES THE OBJECT COMPLETELY
+            const item_remove = document.createElement('button')
+            item_remove.classList.add('item-remove')
+            item_remove.setAttribute('id',title)
+            item_remove.textContent = 'Remove'
+            
+
+            item_remove.addEventListener('click', (event) => {
+                let buttonClicked = event.target
+                buttonClicked.parentElement.remove()
+                cart.splice(cart.indexOf(product),1)
+                getTotalCartAmount()
+                console.log(cart)
+            })
+            
+            item_img.srcset =  images[0], images[1], images[2], images[3], images[4], images[5]
+            
+
+            cart_item.append(item_img,item_info,item_price,item_amount,item_remove)
+            
+            item_brand.textContent = brand
+            item_name.textContent = title
+            item_desc.textContent = description
+            item_price.textContent = `$${price}.00`
+            
+            
+            main_cart_body.append(cart_item)
+
+            getTotalCartAmount()
+
+            ItemAdded()
+            
+            console.log(cart)
+
+    }
+
+
+    const getTotalCartAmount = () => {
+        let totalAmount = 0;
+        cart.forEach(item => {
+            totalAmount += item.price * item.amount
+            item.totalOrder = totalAmount            
+        })
+        cart.totalOrder = totalAmount
+        return checkout_amount.textContent = `Total: $${totalAmount}`;
+    };
+
+
+function itemAlreadyAdded(){
+    added_to_cart.style.backgroundColor = 'var(--f-message)'
+    added_to_cart.style.border = 'var(--f-border)'
+    added_to_cart.textContent = 'Item Already Added'
+    added_to_cart.classList.toggle('toggle')
+    setTimeout(() => added_to_cart.classList.toggle('toggle'), 2000 )
+}
+
+
+function ItemAdded(){
+    added_to_cart.style.backgroundColor = 'var(--s-message)'
+    added_to_cart.style.border = 'var(--s-border)'
+    added_to_cart.textContent = 'Item Added Successfully'
+    added_to_cart.classList.toggle('toggle')
+    setTimeout(() => added_to_cart.classList.toggle('toggle'), 2000 )
+}
+
+// CHECKOUT DOM
+
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+    })
+})
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+    closeModal(modal)
+    })
+})
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+    })
+})
+
+function openModal(modal) {
+    if(!cart.length) return checkout_amount.textContent = 'You need to add an item!'
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
 

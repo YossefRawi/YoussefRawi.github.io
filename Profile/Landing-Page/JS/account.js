@@ -59,8 +59,8 @@ function update_your_profile(e){
             state: ste
 
         }).then(() =>{
-            profile_message.style.backgroundColor = 'rgba(0, 195, 0, 0.602)'
-            profile_message.style.border = '1px solid rgb(0, 133, 0)'
+            profile_message.style.backgroundColor = 'var(--s-message)'
+            profile_message.style.border = 'var(--s-border)'
             profile_message.textContent = 'Succesfully Upated Profile!'
         } ).catch(error => console.log(error.message))
 

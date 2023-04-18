@@ -39,8 +39,7 @@ const laptopia_firestore_db = firebase.firestore()
 
 
 
-const userLoggedIn = (email, user, first_name ,sur_name,phone_number,first_address,secondary_address,country,state) =>{
-  console.log(email)
+const userLoggedIn = (user, first_name ,sur_name,phone_number,first_address,secondary_address,country,state) =>{
   console.log('user logged in: ', user);
   profile_img_link.href = '../HTML/account.html'
   profile_data_name.textContent =  `${first_name}  ${sur_name}`  
