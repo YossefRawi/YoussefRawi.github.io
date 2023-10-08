@@ -35,7 +35,7 @@ const Data =
     link:'../Profile/New-Form/Form---main/signup.html'
 },
 {  
-    name:"Landing Page",
+    name:"Laptopia",
     link:'../Profile/Landing-Page/HTML/index.html'
 },
 {   
