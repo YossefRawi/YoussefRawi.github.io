@@ -1,0 +1,23 @@
+.order-h1{
+    border-bottom: 3px solid var(--blue-color);
+    margin: 1.5rem;
+    color: var(--blue-color);
+}
+.order-container{
+    margin: 1.5rem;
+    background-color: var(--blue-color);
+    color: var(--main-color);
+}
+.order-card{
+    padding: 0.5rem 2.5rem;
+}
+
+.order-items div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+    padding: 2.5rem 0 2.5rem 0;
+    border-top: 3px solid var(--main-color);
+    text-align: center;
+
+}

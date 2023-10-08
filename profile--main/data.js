@@ -36,7 +36,7 @@ const Data =
 },
 {  
     name:"Landing Page",
-    link:'../Profile/Landing-Page/Home/index.html'
+    link:'../Profile/Landing-Page/HTML/index.html'
 },
 {   
     name:"Weather App",

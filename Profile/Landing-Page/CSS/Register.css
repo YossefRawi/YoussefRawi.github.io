@@ -3,8 +3,12 @@
 header{
     position: absolute;
     top: 1%;
-    font-size: 1.5vw;
-    background-color: white;
+    font-size: 1rem;
+    background-color:transparent;
+}
+
+.form-header{
+    color: white;
 }
 
 body{
@@ -20,11 +24,14 @@ body{
 
 button{
     margin: 1rem;
+    width: 8rem ;
+    height: 3rem;
+    font-size: 1.5rem;
 }
 
 
 input{
-    width: 45vw ;
+    width: 40vw ;
     height: 5vh;
     border: 0.1rem solid var(--main-color);
 
@@ -32,7 +39,7 @@ input{
 
 
 input:valid{
-    border: 0.2rem solid green;
+    border: 2px solid green;
 }
 
 a{
@@ -47,15 +54,16 @@ a{
     max-width: 100vw;
 }
 .formSign{
-    border: 0.1rem solid white;
+    background:var(--blue-color);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     width: 50%;
     text-align: center;
-    background-color: white;
-
     font-size: 2vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 .actualForm{
 
@@ -67,9 +75,13 @@ a{
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
 
     .formSign{
+        width: 80vw;
+    }
+
+    input{
         width: 75vw;
     }
     

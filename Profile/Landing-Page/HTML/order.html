@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/order.css">
+    
+    <title>Your Orders</title>
+</head>
+<body>
+    <header >
+        <a  class="header-link" href="index.html"><h1>LAPOTPIA</h1></a>    
+        <nav id="nav-bar">
+            <a href="browse.html">Browse</a>
+            <a href="order.html">Your Order</a>
+            <a  class="profile-img-link" id="profile-img-link" href="account.html">
+                <img alt="ss" id="profile-img" class="profile-img profile-img-header" src="../image/user_318-159711.avif"> 
+            </a>
+            <button class="log-out" id="log-out">Log Out</button>
+        </nav>
+    </header>
+    <h1 class="order-h1">Your Order</h1>
+    <main id="order-container" class="order-container">
+        <div id="order-card" class="order-card">
+            <div id="order-items" class="order-items"></div>
+        </div>
+
+    </main>
+
+    <script src="../JS/auth.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+</body>
+</html>

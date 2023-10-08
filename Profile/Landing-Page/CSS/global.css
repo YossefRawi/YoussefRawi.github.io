@@ -3,8 +3,8 @@
     --f-border:1px solid rgb(133, 0, 0);
     --s-message:rgba(0, 195, 0, 0.602);
     --s-border:1px solid rgb(0, 133, 0);
-    --main-color:#212529;
-    --blue-color:#777696;
+    --blue-color:#1F2029;
+    --main-color:#ffeaa7df;
     --card-color:#FEF5DF;
 }
 *,ul,li,ol{
@@ -31,14 +31,14 @@ button{
     font: bold;
     font-size: 2rem;
     border: 0.1rem  solid;
-    color:white ;
-    background-color: var(--main-color);
-    box-shadow: inset 0 0 0 0 white;
+    color:var(--blue-color) ;
+    background-color:white;
+    box-shadow: inset 0 0 0 0 var(--blue-color);
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 
 }
 button:hover{
-    box-shadow: inset 400px 0 0 0 white;
+    box-shadow: inset 400px 0 0 0 var(--blue-color);
     color: var(--main-color);
 }
 
@@ -47,8 +47,10 @@ header{
     position: -webkit-sticky;
     position: sticky ;
     top: 0;
-    color: white;
-    background-color: var(--main-color);
+    color: var(--main-color);
+    background:var(--blue-color);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,12 +58,14 @@ header{
     font-size: 1.4rem;
     z-index: 1;
     
+    
 }
 
-header > a:hover {
-    box-shadow: none;
-    color: white;
+.header-link{
+    font-weight: 300;
 }
+
+
 
 nav{
     display: flex;
@@ -70,22 +74,29 @@ nav{
 }
 
 nav   a{
+    color: var(--main-color);
     margin-right:1.5rem;
 }
 
 a {
-    color: white;
+    color: var(--main-color);
     text-decoration: none;
-    box-shadow: inset 0 0 0 0 white;
+    box-shadow: inset 0 0 0 0 var(--blue-color);
     margin: 0 -.25rem;
     padding: 0.1rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   }
   a:hover {
-    box-shadow: inset 200px 0 0 0 white;
-    color: var(--main-color);
+    box-shadow: inset 200px 0 0 0 var(--blue-color);
+    color: white;
   }
 
+
+  .header-link:hover {
+    background: none;
+    box-shadow: none;
+    color: var(--card-color);
+}
 
   .log-out{
     font-size: 1rem;
@@ -111,19 +122,30 @@ a {
 
 }
 
-.profile-img-link:hover{
-    box-shadow: none;
-    
- }
-  .profile-img-header{
+.profile-img-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile-img-header{
     width: 50px;
     height: 50px;
     border-radius: 50%;
     transition: 0.3s ease-in-out;
-  }
+    
+}
 
-  .profile-img-header:hover{
+.profile-img-header:hover{
     border-radius: 0;
-  }
+    background-color: transparent;
 
-  
+}
+
+.profile-img-link:hover{
+    box-shadow: none;
+    border-radius: 0;
+    background-color: transparent;
+
+}

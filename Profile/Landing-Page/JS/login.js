@@ -2,7 +2,11 @@ let Email = document.getElementById('e-mail');
 let passWord = document.getElementById('passWord');
 let subtn = document.getElementById('subtn').addEventListener('click', login)
 let message = document.getElementById('Message');
-message.style.color = 'red'
+
+
+
+message.style.color = 'white'
+message.style.background = 'red'
 
 
 

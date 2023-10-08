@@ -4,7 +4,11 @@ const shop_items = document.getElementById('shop-items')
 const search_bar = document.getElementById("search-bar")
 const checkout_amount = document.getElementById("checkout-amount")
 const added_to_cart = document.getElementById('added-to-cart')
+const modal_body = document.getElementById('modal-body')
 
+//CHECKOUT
+const checkout_button = document.getElementById('checkout-button')
+checkout_button.addEventListener('click', checkoutItems)
 
 
 //Toggles Between Shop and Cart like Tabs
@@ -20,7 +24,6 @@ const toggle_cart = document.getElementById('toggle-cart').addEventListener('cli
     cart_main.classList.remove('toggle')
     shop_main.classList.add('toggle')
 })
-
 
 
 
@@ -66,7 +69,7 @@ async function getProducts(){
             const content_price = document.createElement('h6')
             const content_ul = document.createElement('ul')
             const content_rating = document.createElement('li')
-            const content_stock = document.createElement('li')
+            let content_stock = document.createElement('li')
             const content_button = document.createElement('button')
             content_ul.append(content_rating,content_stock)
             content_div.append(content_img,content_name,content_desc,content_brand,content_price,content_ul,content_button)
@@ -87,11 +90,12 @@ async function getProducts(){
             
             //WHEN CLICKED THE PRODUCT APPEARS IN THE CART
             content_button.addEventListener('click', () => {
-
-            setCartItems(title,description,brand,price,images, product)
-            
-            
+            console.log(product)
+            content_stock.textContent = `Stock: ${stock - 1}`
+            setCartItems(title,description,brand,price,images,stock,product)
             })
+
+
             return { name: product.title, brand:product.brand,element: content_div}
     
         })
@@ -105,16 +109,18 @@ async function getProducts(){
     getProducts()
     
     
-    function setCartItems(title,description,brand,price,images,product){
+    function setCartItems(title,description,brand,price,images,stock,product){
 
             //RETURNS IF CART ARRAY ALREADY CONTAINS ELEMENT
 
             if (cart.filter(item => item.title === title).length > 0){
+                
                 itemAlreadyAdded()
                 return
             } 
             cart.push(product)
 
+            
             const cart_item = document.createElement('div')
             cart_item.classList.add('cart-item')
             const item_img = document.createElement('img')
@@ -144,12 +150,10 @@ async function getProducts(){
             item_amount.addEventListener('input',() =>{
                 if(!item_amount.value) return
                 product.amount = Number(item_amount.value)
-                console.log(cart)
                 getTotalCartAmount()
             })
 
 
-            //BUTTON THAT REMOVES THE OBJECT COMPLETELY
             const item_remove = document.createElement('button')
             item_remove.classList.add('item-remove')
             item_remove.setAttribute('id',title)
@@ -178,9 +182,8 @@ async function getProducts(){
             main_cart_body.append(cart_item)
 
             getTotalCartAmount()
-
-            ItemAdded()
-            
+            ItemAdded()           
+            // localStorage.setItem(title,JSON.stringify(product))
             console.log(cart)
 
     }
@@ -189,8 +192,9 @@ async function getProducts(){
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         cart.forEach(item => {
-            totalAmount += item.price * item.amount
-            item.totalOrder = totalAmount            
+            let totalItemAmount = item.price * item.amount
+            item.totalItemAmount = totalItemAmount
+            totalAmount += totalItemAmount
         })
         cart.totalOrder = totalAmount
         return checkout_amount.textContent = `Total: $${totalAmount}`;
@@ -214,45 +218,54 @@ function ItemAdded(){
     setTimeout(() => added_to_cart.classList.toggle('toggle'), 2000 )
 }
 
-// CHECKOUT DOM
 
 
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
-
-
-openModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-    })
-})
-
-overlay.addEventListener('click', () => {
-    const modals = document.querySelectorAll('.modal.active')
-    modals.forEach(modal => {
-    closeModal(modal)
-    })
-})
-
-closeModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
-    })
-})
-
-function openModal(modal) {
+function checkoutItems(){
     if(!cart.length) return checkout_amount.textContent = 'You need to add an item!'
-    if (modal == null) return
-    modal.classList.add('active')
-    overlay.classList.add('active')
+
+    let user = auth.currentUser
+
+
+    cart.orderNumber = orderNumber
+
+    cart.map(item => {
+
+        
+
+        laptopia_firestore_db.collection('cart').doc(user.uid).set({  
+
+            [item.id]:{...item}
+
+            }, {merge: true})
+
+
+    })
+
+    cart = []
+    console.log(cart)
+
+    while(main_cart_body.firstChild){
+
+        main_cart_body.removeChild(main_cart_body.firstChild)
+    }
+    checkout_amount.textContent = 'Thank you for your purchase!'
+
 }
 
-function closeModal(modal) {
-    if (modal == null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active')
-}
+
+
+//LOCAL STORAGE FOR ADDED FUNCTIONALITY
+// function getFromLocalStorage(){
+//     for(let i = 0; i < localStorage.length; i++){
+//         const storageItem = localStorage.key(i)
+//         let getStorageItem = localStorage.getItem(storageItem)
+//         const parsedItem = JSON.parse(getStorageItem)
+//         const {title,description,brand,price,images} = parsedItem
+
+//         setCartItems(title,description,brand,Number(price),images,parsedItem)
+//     }
+
+// }
+
+// getFromLocalStorage()
 

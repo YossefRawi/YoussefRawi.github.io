@@ -4,7 +4,9 @@ let message = document.getElementById('Message');
 let passWord = document.getElementById('passWord');
 let conPassword = document.getElementById('confirmP');
 let subtn = document.getElementById('subtn').addEventListener('click', submitForm)
-message.style.color = "red"
+
+message.style.color = "white"
+message.style.background = 'red'
 
 
 
