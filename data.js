@@ -6,41 +6,41 @@ const Data =
     link:'',
 },{  
     name:"Tic-Tac-Toe",
-    link:'../Profile/Js-Tic-Tac-Toe/TTT.html'
+    link:'../public/Js-Tic-Tac-Toe/TTT.html'
     
 },
 {   
     name:"Calculator ",
-    link:'../Profile/Calc-main/calculator/Index.html'
+    link:'../public/Calc-main/calculator/Index.html'
 },
 {   
     name:"To do List",
-    link:'../Profile/JS_ToDoList/dist/index.html'
+    link:'../public/JS_ToDoList/dist/index.html'
 },
 {   id:4,
     name:"Library",
     class:"library",
-    link:'../Profile/JS-Library-App/library.html'
+    link:'../public/JS-Library-App/library.html'
 },
 {   
     name:"Rock Paper Scissors",
-    link:'../Profile/Rock-Paper-Scissors-main/rps/RockPaperScissors.html'
+    link:'../public/Rock-Paper-Scissors-main/rps/RockPaperScissors.html'
 },
 {  
     name:"Restaurant Page",
-    link:'../Profile/Restaurant-Page/dist/index.html'
+    link:'../public/Restaurant-Page/dist/index.html'
 },
 {   
     name:"Sign Up Form",
-    link:'../Profile/New-Form/Form---main/signup.html'
+    link:'../public/New-Form/Form---main/signup.html'
 },
 {  
     name:"Laptopia",
-    link:'../Profile/Landing-Page/HTML/index.html'
+    link:'../public/Landing-Page/HTML/index.html'
 },
 {   
     name:"Weather App",
-    link:'../Profile/Weather-App/Weatherapp.html'
+    link:'../public/Weather-App/Weatherapp.html'
 },
 {   
     name:"REACT Shopping-Cart (REPO)",
